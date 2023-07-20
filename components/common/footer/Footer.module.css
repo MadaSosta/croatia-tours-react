@@ -1,0 +1,140 @@
+/* Transition animations */
+.up {
+  position: relative;
+  top: 0;
+  transition: top ease 0.5s;
+}
+
+/* Footer properties */
+#footer {
+  background-color: #0a122a;
+  padding: 50px 0px;
+}
+
+.footerWrapper {
+  margin: 0 auto;
+  width: 100%;
+  max-width: 1000px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.footerWrapper > * {
+  flex-basis: 33.33%;
+}
+
+.footerText:first-child {
+  margin-right: 30px;
+}
+
+.footerText:last-child {
+  text-align: right;
+}
+
+.list {
+  display: flex;
+  gap: 20px;
+}
+
+.listItem {
+  position: relative;
+  top: 0;
+  display: grid;
+  place-items: center;
+  width: 50px;
+  height: 50px;
+  cursor: pointer;
+  border-radius: 50%;
+  border: 5px solid #d8e2dc;
+  transition: all 0.5s ease;
+}
+
+.listItem:hover {
+  top: -10px;
+}
+
+.listItem .fa {
+  color: #d8e2dc;
+  transition: all 0.5s ease;
+}
+
+.listItem:hover.facebook {
+  border: 5px solid #3b5998;
+  box-shadow: 0 0 15px #3b5998;
+  transition: all 0.5s ease;
+}
+
+.listItem:hover .fa-facebook {
+  color: #3b5998;
+  text-shadow: 0 0 15px #3b5998;
+  transition: all 0.5s ease;
+}
+
+.listItem:hover.twitter {
+  border: 5px solid #00aced;
+  box-shadow: 0 0 15px #00aced;
+  transition: all 0.5s ease;
+}
+
+.listItem:hover .fa-twitter {
+  color: #00aced;
+  text-shadow: 0 0 15px #00aced;
+  transition: all 0.5s ease;
+}
+
+.listItem:hover.instagram {
+  border: 5px solid #bc2a8d;
+  box-shadow: 0 0 15px #bc2a8d;
+  transition: all 0.5s ease;
+}
+
+.listItem:hover .fa-instagram {
+  color: #bc2a8d;
+  text-shadow: 0 0 15px #bc2a8d;
+  transition: all 0.5s ease;
+}
+
+.listItem:hover.google {
+  border: 5px solid #dd4b39;
+  box-shadow: 0 0 15px #dd4b39;
+  transition: all 0.5s ease;
+}
+
+.listItem:hover .fa-google {
+  color: #dd4b39;
+  text-shadow: 0 0 15px #dd4b39;
+  transition: all 0.5s ease;
+}
+
+.listItem:hover.whatsapp {
+  border: 5px solid #4dc247;
+  box-shadow: 0 0 15px #4dc247;
+  transition: all 0.5s ease;
+}
+
+.listItem:hover .fa-whatsapp {
+  color: #4dc247;
+  text-shadow: 0 0 15px #4dc247;
+  transition: all 0.5s ease;
+}
+
+/* Responivness */
+@media screen and (max-width: 900px) {
+  .footerWrapper {
+    flex-direction: column;
+    justify-content: unset;
+    align-items: center;
+    gap: 30px;
+  }
+  .footerWrapperr > * {
+    flex-basis: 100%;
+    text-align: center;
+  }
+}
+@media screen and (max-width: 500px) {
+  .listItem {
+    width: 40px;
+    height: 40px;
+  }
+}
