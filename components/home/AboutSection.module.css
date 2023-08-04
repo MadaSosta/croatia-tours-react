@@ -1,0 +1,131 @@
+.about {
+  padding: 80px 0px 150px 0px;
+  background: url("/images/plaza3.jpg") no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+}
+
+.aboutInner .aboutWrapper {
+  width: 90%;
+  margin: 0 auto;
+}
+
+.customHeading {
+  text-transform: uppercase;
+  font-size: 1rem;
+  position: relative;
+  margin-bottom: 30px;
+}
+.customHeading::before {
+  content: "";
+  width: 14px;
+  height: 2px;
+  position: absolute;
+  top: 50%;
+  left: -20px;
+  transform: translateY(-50%);
+  background: var(--color-danger-600);
+}
+
+.aboutInfo {
+  display: flex;
+}
+
+.aboutInfoLeft {
+  flex-basis: 50%;
+  padding: 10px 20px 10px 0;
+}
+
+.aboutInfoLeft p:last-child {
+  font-size: clamp(1.9rem, 2.2vw, 2.2vw);
+  font-weight: var(--font-weight-600);
+  color: white;
+  margin-top: 40px;
+  background: linear-gradient(to bottom right, #27c6f5, #26eb45);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.aboutInfoRight {
+  flex-basis: 50%;
+  padding: 10px 0 10px 10px;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.aboutInfoRight p {
+  font-size: clamp(1rem, 1vw, 1.4vw);
+  opacity: 0.9;
+}
+
+.aboutInfoRight p + p {
+  margin-top: 45px;
+}
+
+.contactInfo {
+  padding-top: 100px;
+}
+
+.contactInfoInner {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  width: 90%;
+  max-width: 1300px;
+  margin: 0 auto;
+}
+
+.contactCard {
+  position: relative;
+  flex: 1 0 clamp(250px, 30%, 400px);
+  margin: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  backdrop-filter: blur(15px);
+  border-radius: 10px;
+  padding: 40px 10px;
+  box-shadow: 0 0 10px rgba(8, 8, 8, 0.911), 0 0 18px rgb(22, 22, 22);
+  overflow: hidden;
+}
+
+.contactCard h1 {
+  position: absolute;
+  bottom: -40%;
+  left: -10%;
+  font-size: 18rem;
+  opacity: 0.1;
+  display: inline-block;
+  font-family: sans-serif !important;
+  margin-bottom: 15px;
+  z-index: -1;
+}
+
+.contactCard h4 {
+  display: inline-block;
+  margin-bottom: 15px;
+  text-align: center;
+}
+
+.contactCard p {
+  display: block;
+  width: 80%;
+  text-align: center;
+}
+
+@media screen and (max-width: 900px) {
+  .aboutInfo {
+    flex-direction: column;
+  }
+
+  .aboutInfoRight {
+    margin-top: 20px;
+  }
+
+  .contactInfo {
+    padding-top: 60px;
+  }
+}

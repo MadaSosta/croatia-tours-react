@@ -1,0 +1,111 @@
+.landscapes {
+  padding: 100px 0px;
+  background-color: wheat;
+  color: var(--color-neutral-900);
+}
+
+.landscapesWrapper {
+  margin: 0 auto;
+  width: 90%;
+  max-width: 1300px;
+}
+
+.customHeading {
+  text-transform: uppercase;
+  font-size: 1rem;
+  position: relative;
+  margin-bottom: 30px;
+}
+.customHeading::before {
+  content: "";
+  width: 14px;
+  height: 2px;
+  position: absolute;
+  top: 50%;
+  left: -20px;
+  transform: translateY(-50%);
+  background: var(--color-danger-600);
+}
+
+.customHeading {
+  margin-bottom: 30px;
+}
+
+.customText {
+  display: inline-block;
+  width: 60%;
+  min-width: 250px;
+}
+
+.landscapesWrapper > h1 {
+  font-size: 2.2rem;
+  margin-bottom: 10px;
+}
+
+.imageWrapper {
+  width: 100%;
+  margin-top: 50px;
+  display: grid;
+  grid-gap: 20px;
+  grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+  grid-auto-rows: 250px;
+}
+
+.imageWrapper a {
+  position: relative;
+  border-radius: var(--border-radius-200);
+}
+
+.imageWrapper a p {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  transition: all 0.5s ease;
+  opacity: 0;
+  pointer-events: none;
+  font-size: 1.4rem;
+  color: white;
+  text-align: center;
+}
+
+.imageWrapper a img {
+  object-fit: cover;
+  width: 100%;
+  border-radius: inherit;
+  display: block;
+}
+
+.imageWrapper a::after {
+  content: "";
+  width: 100%;
+  height: 100%;
+  left: 0;
+  top: 0;
+  position: absolute;
+  background-color: rgba(0, 0, 0, 0);
+  pointer-events: none;
+  transition: all 0.5s ease;
+}
+
+.imageWrapper a:hover p {
+  transition: all 0.5s ease;
+  opacity: 1;
+  pointer-events: all;
+  z-index: 1;
+}
+
+.imageWrapper a:hover::after {
+  background-color: rgba(0, 0, 0, 0.4);
+  pointer-events: all;
+}
+
+@media screen and (max-width: 700px) {
+  .imageWrapper {
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)) !important;
+  }
+
+  .landscapesWrapper > h1 {
+    font-size: var(--font-size-500);
+  }
+}
