@@ -1,0 +1,114 @@
+.HeroSectionWrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+  padding: var(--padding-primary-800);
+}
+
+.sectionTitle {
+  font-size: var(--font-size-700);
+  font-weight: var(--font-weight-700);
+  color: var(--color-neutral-100);
+  margin-bottom: 1rem;
+}
+
+.nav {
+  background-color: var(--color-danger-200);
+  padding: var(--padding-secondary-400) var(--padding-secondary-500);
+  border-radius: 100px;
+  margin-bottom: 1.5rem;
+}
+
+.list {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.listItem {
+  color: var(--color-neutral-200);
+  font-size: var(--font-size-150);
+  font-weight: var(--font-weight-500);
+  border-radius: 100px;
+  background-color: var(--color-neutral-hover-200);
+  box-shadow: 0 0 10px 3px rgba(0, 0, 0, 0.02);
+  transition: filter 0.2s ease-in-out, background-color 0.2s ease-in-out;
+}
+
+.listButton {
+  all: unset;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: var(--padding-secondary-200) var(--padding-secondary-500);
+  cursor: pointer;
+}
+
+.listButton .icon {
+  width: 25px;
+  height: 25px;
+  color: var(--color-danger-300);
+}
+
+.listItem.active {
+  color: var(--color-neutral-800);
+  background-color: var(--color-neutral-100);
+}
+
+.listItem:hover,
+.listItem:focus-visible {
+  filter: brightness(1.1);
+}
+
+.search {
+  width: 100%;
+  max-width: 1000px;
+  position: relative;
+}
+
+.searchInput {
+  width: 100%;
+  padding: var(--padding-secondary-600) var(--padding-secondary-700);
+  border-radius: 100px;
+  background-color: var(--color-neutral-200);
+  box-shadow: 0 0 10px 3px rgba(0, 0, 0, 0.02);
+  color: var(--color-neutral-700);
+  font-size: var(--font-size-150);
+  font-weight: var(--font-weight-500);
+  transition: outline 0.2s ease-in-out;
+}
+
+.searchInput::placeholder {
+  color: var(--color-neutral-400);
+}
+
+.searchInput:focus {
+  outline: 2px solid var(--color-danger-300);
+}
+
+.searchButton {
+  position: absolute;
+  top: 50%;
+  right: 0;
+  transform: translateY(-50%);
+  padding: var(--padding-secondary-500) var(--padding-secondary-700)
+    var(--padding-secondary-500) var(--padding-secondary-600);
+  border-radius: 0 100px 100px 0;
+  background-color: var(--color-neutral-200);
+  color: var(--color-neutral-700);
+  font-size: var(--font-size-150);
+  font-weight: var(--font-weight-500);
+  transition: background-color 0.2s ease-in-out;
+}
+
+.searchButton:hover,
+.searchButton:focus-visible {
+  background-color: var(--color-danger-100);
+}
+
+.searchButton .icon {
+  width: 30px;
+  height: 30px;
+  color: var(--color-danger-400);
+}

@@ -1,0 +1,11 @@
+.tripsWrapper {
+  padding: 180px 0 var(--padding-primary-900) 0;
+  background-color: var(--color-danger-300);
+}
+
+.tripsContainer {
+  margin: 0 auto;
+  width: 100%;
+  max-width: 1200px;
+  padding: var(--padding-secondary-800);
+}
