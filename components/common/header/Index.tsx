@@ -1,30 +1,54 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect, useRef } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import styles from "./Header.module.css";
 import { FiMenu } from "react-icons/fi";
-import { Cinzel_Decorative } from "next/font/google";
 import { auth } from "@/config/firebaseConfig";
 import { useAuthState } from "react-firebase-hooks/auth";
 import { RiLogoutBoxRLine } from "react-icons/ri";
-
-const cinzelDecorative = Cinzel_Decorative({
-  weight: ["400", "700", "900"],
-  subsets: ["latin"],
-});
+import { handleHeaderScroll } from "@/lib/utils";
+import { cinzelDecorative } from "@/constants/consts";
 
 function Header() {
   const [user, loading, error] = useAuthState(auth);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [hasBackgroundApplied, setHasBackgroundApplied] = useState(false);
+  const headerRef = useRef(null);
+
+  useEffect(() => {
+    if (typeof window !== "undefined") {
+      window.addEventListener("scroll", () =>
+        handleHeaderScroll(
+          hasBackgroundApplied,
+          setHasBackgroundApplied,
+          headerRef
+        )
+      );
+    }
+
+    return () => {
+      window.removeEventListener("scroll", () =>
+        handleHeaderScroll(
+          hasBackgroundApplied,
+          setHasBackgroundApplied,
+          headerRef
+        )
+      );
+    };
+  }, [hasBackgroundApplied]);
 
   return (
-    <header id={styles.header}>
+    <header
+      ref={headerRef}
+      id={styles.header}
+      className={`${hasBackgroundApplied && styles.hasBackground}`}
+    >
       <div className={styles.logo}>
-        <Image src="/images/logo.svg" alt="logo" width={80} height={80} />
+        <Image src="/images/logo.svg" alt="logo" width={60} height={60} />
         <span className={`${styles.logoText} ${cinzelDecorative.className}`}>
-          Croatia
+          CROATIA
         </span>
       </div>
 
@@ -34,13 +58,16 @@ function Header() {
             <Link href="/">Home</Link>
           </li>
           <li className={styles.listItem}>
-            <Link href="/about">About</Link>
+            <Link href="/#about">About</Link>
           </li>
           <li className={styles.listItem}>
-            <Link href="/landscapes">Landscapes</Link>
+            <Link href="/#landscapes">Landscapes</Link>
           </li>
           <li className={styles.listItem}>
-            <Link href="/contact">Contact</Link>
+            <Link href="/#join">Contact</Link>
+          </li>
+          <li className={styles.listItem}>
+            <Link href="/trips">Trips</Link>
           </li>
           {user && !loading ? (
             <li className={styles.listItem}>
