@@ -49,40 +49,42 @@ const Register = () => {
   };
 
   return (
-    <div className={styles.formWrapper}>
-      <h1 className={styles.formTitle}>Register</h1>
-      <form onSubmit={handleSubmit} className={styles.form}>
-        <input
-          className={styles.formInput}
-          type="text"
-          placeholder="Username"
-          value={username}
-          onChange={({ target }) => setUsername(target.value)}
-        />
+    <div className={styles.register}>
+      <div className={styles.formWrapper}>
+        <h1 className={styles.formTitle}>Register</h1>
+        <form onSubmit={handleSubmit} className={styles.form}>
+          <input
+            className={styles.formInput}
+            type="text"
+            placeholder="Username"
+            value={username}
+            onChange={({ target }) => setUsername(target.value)}
+          />
 
-        <input
-          className={styles.formInput}
-          type="email"
-          placeholder="Email"
-          value={email}
-          onChange={({ target }) => setEmail(target.value)}
-        />
+          <input
+            className={styles.formInput}
+            type="email"
+            placeholder="Email"
+            value={email}
+            onChange={({ target }) => setEmail(target.value)}
+          />
 
-        <input
-          className={styles.formInput}
-          type="password"
-          placeholder="Password"
-          value={password}
-          onChange={({ target }) => setPassword(target.value)}
-        />
-        <button className={styles.formButton} type="submit">
-          Register
-        </button>
-      </form>
+          <input
+            className={styles.formInput}
+            type="password"
+            placeholder="Password"
+            value={password}
+            onChange={({ target }) => setPassword(target.value)}
+          />
+          <button className={styles.formButton} type="submit">
+            Register
+          </button>
+        </form>
 
-      <p className={styles.formText}>
-        Already have an account? <Link href="/login">Login</Link>
-      </p>
+        <p className={styles.formText}>
+          Already have an account? <Link href="/login">Login</Link>
+        </p>
+      </div>
     </div>
   );
 };

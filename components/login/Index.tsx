@@ -25,32 +25,34 @@ const Login = () => {
   };
 
   return (
-    <div className={styles.formWrapper}>
-      <h1 className={styles.formTitle}>Login</h1>
-      <form onSubmit={handleSubmit} className={styles.form}>
-        <input
-          className={styles.formInput}
-          type="email"
-          placeholder="Email"
-          value={email}
-          onChange={({ target }) => setEmail(target.value)}
-        />
+    <div className={styles.login}>
+      <div className={styles.formWrapper}>
+        <h1 className={styles.formTitle}>Login</h1>
+        <form onSubmit={handleSubmit} className={styles.form}>
+          <input
+            className={styles.formInput}
+            type="email"
+            placeholder="Email"
+            value={email}
+            onChange={({ target }) => setEmail(target.value)}
+          />
 
-        <input
-          className={styles.formInput}
-          type="password"
-          placeholder="Password"
-          value={password}
-          onChange={({ target }) => setPassword(target.value)}
-        />
-        <button className={styles.formButton} type="submit">
-          Login
-        </button>
-      </form>
+          <input
+            className={styles.formInput}
+            type="password"
+            placeholder="Password"
+            value={password}
+            onChange={({ target }) => setPassword(target.value)}
+          />
+          <button className={styles.formButton} type="submit">
+            Login
+          </button>
+        </form>
 
-      <p className={styles.formText}>
-        Don't have an account? <Link href="/register">Register</Link>
-      </p>
+        <p className={styles.formText}>
+          Don't have an account? <Link href="/register">Register</Link>
+        </p>
+      </div>
     </div>
   );
 };
