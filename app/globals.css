@@ -10,6 +10,11 @@
   font-family: inherit;
 }
 
+html,
+body {
+  scroll-behavior: smooth;
+}
+
 a {
   color: inherit;
   text-decoration: none;
@@ -75,13 +80,8 @@ h6 {
   margin: 0 auto;
 }
 
-#main {
-  padding: 160px var(--padding-primary-600) var(--padding-primary-600);
-}
-
 @media only screen and (max-width: 768px) {
   #main {
-    padding: 160px var(--padding-primary-300) var(--padding-primary-600);
     margin-bottom: calc(var(--padding-primary-600) * 2);
   }
 }
@@ -194,7 +194,7 @@ h6 {
     --color-danger-300: #ea6c6e;
     --color-danger-400: #f5474a;
     --color-danger-500: #fa312d;
-    --color-danger-600: #eb242d;
+    --color-danger-600: #ff000d;
     --color-danger-700: #d91527;
     --color-danger-800: #cc0720;
     --color-danger-900: #be0012;
