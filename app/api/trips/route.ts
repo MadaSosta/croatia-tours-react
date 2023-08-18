@@ -1,5 +1,5 @@
 import { BASE_API_URL_GEONAME, BASE_API_URL_RADIUS, LIMIT, RADIUS } from '@/constants/consts'
-import { TRadius, type TGeoname, TRadiusApiResponse } from '@/types/typings'
+import { type TGeoname, TRadiusApiResponse } from '@/types/typings'
 import { NextApiRequest, NextApiResponse } from 'next';
 import { NextResponse } from 'next/server';
 

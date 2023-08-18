@@ -20,7 +20,6 @@ function HeroSection() {
             <iframe
               id={styles.ytplayer}
               src="https://www.youtube.com/embed/T60_zAvnAsU"
-              frameBorder={0}
               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
               allowFullScreen
               title="Croatia Video"

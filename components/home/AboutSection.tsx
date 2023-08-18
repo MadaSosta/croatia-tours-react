@@ -1,5 +1,4 @@
 import React from "react";
-import Image from "next/image";
 import { cinzelDecorative } from "@/constants/consts";
 import styles from "./AboutSection.module.css";
 

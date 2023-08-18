@@ -2,7 +2,6 @@
 
 import { useState, FormEvent } from "react";
 import Link from "next/link";
-import { BASE_API_URL_GEONAME } from "@/constants/consts";
 import { FaSearch } from "react-icons/fa";
 import { MdFastfood, MdBeachAccess } from "react-icons/md";
 import { BiSolidHotel } from "react-icons/bi";
