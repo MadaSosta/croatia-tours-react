@@ -55,19 +55,32 @@ function Header() {
       <nav className={`${styles.nav} ${isMenuOpen && styles.open}`}>
         <ul className={styles.list}>
           <li className={styles.listItem}>
-            <Link href="/">Home</Link>
+            <Link href="/" onClick={() => setIsMenuOpen(!isMenuOpen)}>
+              Home
+            </Link>
           </li>
           <li className={styles.listItem}>
-            <Link href="/#about">About</Link>
+            <Link href="/#about" onClick={() => setIsMenuOpen(!isMenuOpen)}>
+              About
+            </Link>
           </li>
           <li className={styles.listItem}>
-            <Link href="/#landscapes">Landscapes</Link>
+            <Link
+              href="/#landscapes"
+              onClick={() => setIsMenuOpen(!isMenuOpen)}
+            >
+              Landscapes
+            </Link>
           </li>
           <li className={styles.listItem}>
-            <Link href="/#join">Contact</Link>
+            <Link href="/#join" onClick={() => setIsMenuOpen(!isMenuOpen)}>
+              Contact
+            </Link>
           </li>
           <li className={styles.listItem}>
-            <Link href="/trips">Trips</Link>
+            <Link href="/trips" onClick={() => setIsMenuOpen(!isMenuOpen)}>
+              Trips
+            </Link>
           </li>
           {user && !loading ? (
             <li className={styles.listItem}>
@@ -82,7 +95,9 @@ function Header() {
             </li>
           ) : (
             <li className={styles.listItem}>
-              <Link href="/login">Login</Link>
+              <Link href="/login" onClick={() => setIsMenuOpen(!isMenuOpen)}>
+                Login
+              </Link>
             </li>
           )}
         </ul>
