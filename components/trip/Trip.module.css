@@ -1,0 +1,211 @@
+.dashboardWrapper {
+  padding: 160px var(--padding-primary-700);
+  background-color: var(--color-neutral-900);
+}
+
+.dashboardContainer {
+  margin: 0 auto;
+  display: flex;
+  gap: 30px;
+  width: 100%;
+  max-width: 1200px;
+  padding: var(--padding-primary-700);
+  border-radius: var(--border-radius-700);
+  box-shadow: 0 0 10px 5px rgba(0, 0, 0, 0.1);
+  background-color: var(--color-neutral-800);
+}
+
+.asideContainer {
+  display: flex;
+  flex-direction: column;
+  flex-basis: 250px;
+  border-right: 2px solid var(--color-neutral-hover-300);
+  padding-right: var(--padding-primary-500);
+}
+
+.asideContainer img {
+  width: 100%;
+  max-width: 250px;
+  margin-top: 10px;
+  margin-bottom: 20px;
+  border-radius: var(--border-radius-300);
+}
+
+.kind {
+  margin-bottom: 20px;
+  background-color: var(--color-neutral-600);
+  padding: var(--padding-primary-200);
+  border-radius: var(--border-radius-300);
+}
+
+.contentContainer {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+.contentContainer p {
+  margin-bottom: 10px;
+}
+
+.ratingScore {
+  display: flex;
+  margin-top: 10px;
+  gap: 50px;
+}
+
+.starRating {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.hotelButton {
+  padding: var(--padding-primary-100);
+  border-radius: var(--border-radius-300);
+  background-color: rgb(9, 121, 105);
+}
+
+.reviewContainer {
+  margin: 0 auto;
+  margin-top: 20px;
+  gap: 30px;
+  width: 100%;
+  max-width: 1200px;
+  padding: var(--padding-primary-700);
+  border-radius: var(--border-radius-700);
+  box-shadow: 0 0 10px 5px rgba(0, 0, 0, 0.1);
+  background-color: var(--color-neutral-800);
+}
+
+.rating {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+
+.reviewButton {
+  padding: var(--padding-primary-200);
+  border-radius: var(--border-radius-300);
+}
+
+.review {
+  display: flex;
+  border-bottom: 1px solid var(--color-neutral-hover-300);
+  margin-bottom: 10px;
+  padding: 10px;
+}
+
+.avatar {
+  width: 60px;
+  height: 60px;
+  background-color: rgba(255, 255, 255, 0.571);
+  border-radius: 100%;
+  padding: 5px;
+  margin-bottom: 2px;
+}
+
+.reviewAuthor {
+  display: flex;
+  padding-right: var(--padding-primary-500);
+}
+
+.userRating {
+  margin-bottom: 10px;
+}
+
+.formWrapper {
+  padding: 160px var(--padding-primary-700);
+  background-color: rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(5px);
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  width: var(--width-primary-100);
+}
+
+.formContainer {
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  width: 100%;
+  max-width: 800px;
+  padding: var(--padding-primary-700);
+  border-radius: var(--border-radius-700);
+  box-shadow: 0 0 10px 5px rgba(0, 0, 0, 0.1);
+  background-color: var(--color-neutral-800);
+}
+
+.formHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.closeIcon {
+  cursor: pointer;
+  width: 30px;
+  height: 30px;
+}
+
+.reviewInput {
+  height: 200px;
+  padding: 10px;
+}
+
+.awardRating {
+  display: flex;
+  justify-content: space-between;
+}
+
+.awardButton {
+  padding: var(--padding-primary-200);
+  border-radius: var(--border-radius-300);
+  background-color: rgb(9, 121, 105);
+}
+
+@media screen and (max-width: 850px) {
+  .dashboardContainer {
+    flex-direction: column;
+    padding: var(--padding-primary-500);
+    gap: 20px;
+  }
+
+  .asideContainer {
+    flex-basis: 100%;
+    border-right: none;
+    padding-right: 0;
+    margin-bottom: 15px;
+    align-items: center;
+  }
+
+  .asideContainer img {
+    width: 100%;
+    max-width: 350px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    border-radius: var(--border-radius-300);
+  }
+
+  .contentContainer {
+    flex: 1;
+  }
+
+  .reviewContainer {
+    flex-direction: column;
+    padding: var(--padding-primary-500);
+  }
+}
+
+@media screen and (max-width: 556px) {
+  .kind {
+    padding: var(--padding-primary-200);
+  }
+
+  .ratingScore {
+    gap: 20px;
+  }
+}
