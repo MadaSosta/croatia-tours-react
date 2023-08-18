@@ -1,38 +1,51 @@
 .login {
-  padding: 110px 0 100px 0;
+  padding: 120px 0 120px 0;
   background: url("/images/login.jpg") no-repeat;
   background-size: cover;
 }
 .register {
-  padding: 110px 0 100px 0;
+  padding: 120px 0 120px 0;
   background: url("/images/register.jpg") no-repeat;
   background-size: cover;
 }
 
 .formWrapper {
   margin: 0 auto;
-  max-width: 500px;
-  padding: var(--padding-secondary-500);
-  background-color: rgba(255, 255, 255, 0.2);
-  border-radius: var(--border-radius-400);
+  max-width: 450px;
+  padding: 4rem 3rem;
+  background-color: hsla(0, 0%, 10%, 0.1);
+  border: 2px solid var(--color-neutral-100);
+  backdrop-filter: blur(8px);
+  border-radius: var(--border-radius-500);
 }
 
 .formTitle {
   text-align: center;
+  font-weight: var(--font-medium);
+  margin-bottom: 2rem;
 }
 
 .form {
   margin-top: var(--margin-secondary-600);
 }
 
-.formInput {
+.boxInput {
   display: flex;
-  margin-bottom: var(--margin-secondary-200);
+  border-bottom: 2px solid var(--color-neutral-100);
+  align-items: center;
+  margin-bottom: var(--margin-secondary-400);
+}
+
+.formInput {
   padding: var(--padding-secondary-500);
-  border-radius: var(--border-radius-200);
-  background-color: rgba(255, 255, 255, 0.4);
-  backdrop-filter: blur(5px);
+  font-size: var(--font-size-150);
+  background-color: transparent;
   width: 100%;
+}
+
+.formInput:focus {
+  outline: none;
+  border: none;
 }
 
 .formInput::placeholder {
@@ -40,21 +53,24 @@
 }
 
 .formButton {
-  margin: var(--margin-secondary-600) auto var(--margin-secondary-800);
+  margin: var(--margin-secondary-900) auto var(--margin-secondary-900);
   width: 100%;
   text-align: center;
-  padding: var(--padding-secondary-200) var(--padding-secondary-400);
+  padding: var(--padding-secondary-400) var(--padding-secondary-200);
   background-color: var(--color-neutral-100);
   border-radius: var(--border-radius-200);
   color: var(--color-neutral-700);
   font-weight: var(--font-weight-600);
-  font-size: var(--font-size-150);
-  transition: background-color 0.2s ease-in-out;
+  font-size: var(--font-size-200);
+  border: 2px solid var(--color-neutral-100);
+  transition: 0.4s ease-in-out;
 }
 
 .formButton:hover,
 .formButton:focus-visible {
-  background-color: var(--color-primary-100);
+  background-color: transparent;
+  border: 2px solid var(--color-neutral-100);
+  color: var(--color-neutral-100);
 }
 
 .formText {
@@ -64,4 +80,46 @@
 
 .formText a {
   color: var(--color-primary-100);
+}
+
+.icon {
+  font-size: 1.5rem;
+}
+
+#loginEye {
+  cursor: pointer;
+}
+
+.labelEffect {
+  display: flex;
+  align-items: center;
+  position: absolute;
+  left: 80px;
+  color: #ffffffcb;
+  pointer-events: none;
+  transform-origin: 0 0;
+  transition: transform 0.8s cubic-bezier(0.13, 0.05, 0, 1),
+    color 0.8s cubic-bezier(0.13, 0.05, 0, 1);
+}
+
+.formInput::placeholder {
+  color: transparent;
+}
+
+.formInput:focus + .labelEffect,
+.formInput:not(:placeholder-shown) + .labelEffect {
+  transform: translateY(-20px) scale(0.9);
+  color: var(--color-neutral-300);
+}
+
+/* New styles for error container */
+.errorContainer {
+  display: flex;
+}
+
+/* Adjust error display styling */
+.errorDisplay {
+  background-color: rgba(255, 0, 0, 0.495);
+  font-size: var(--font-size-100);
+  margin-left: 10px;
 }
