@@ -15,7 +15,7 @@ function LandscapeSection() {
           own eyes.
         </p>
         <div className={styles.imageWrapper}>
-          <Link href={`/trip/${1}`}>
+          <Link href={`/trip/${"W305269448"}`}>
             <p>Krka Waterfalls</p>
             <Image
               src="/images/krka.jpg"
@@ -24,7 +24,7 @@ function LandscapeSection() {
               sizes="(max-width: 768px) 300px, 400px"
             />
           </Link>
-          <Link href={`/trip/${2}`}>
+          <Link href={`/trip/${"Q7875915"}`}>
             <p>Stuning Islands</p>
             <Image
               src="/images/otok.jpg"
@@ -33,7 +33,7 @@ function LandscapeSection() {
               sizes="(max-width: 768px) 300px, 400px"
             />
           </Link>
-          <Link href={`/trip/${3}`}>
+          <Link href={`/trip/${"W173272537"}`}>
             <p>Velebit</p>
             <Image
               src="/images/priroda.jpg"
@@ -42,7 +42,7 @@ function LandscapeSection() {
               sizes="(max-width: 768px) 300px, 400px"
             />
           </Link>
-          <Link href={`/trip/${4}`}>
+          <Link href={`/trip/${"N1345939661"}`}>
             <p>Dalmatian caves</p>
             <Image
               src="/images/priroda2.jpg"
@@ -51,7 +51,7 @@ function LandscapeSection() {
               sizes="(max-width: 768px) 300px, 400px"
             />
           </Link>
-          <Link href={`/trip/${5}`}>
+          <Link href={`/trip/${"W203701111"}`}>
             <p>Rovinj</p>
             <Image
               src="/images/rovinj.jpg"
@@ -60,7 +60,7 @@ function LandscapeSection() {
               sizes="(max-width: 768px) 300px, 400px"
             />
           </Link>
-          <Link href={`/trip/${6}`}>
+          <Link href={`/trip/${"W522270451"}`}>
             <p>Plitvice lakes</p>
             <Image
               src="/images/slap.jpg"
