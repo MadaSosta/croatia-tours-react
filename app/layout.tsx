@@ -4,6 +4,7 @@ import Footer from "@/components/common/footer/Index";
 import Header from "@/components/common/header/Index";
 
 import "./globals.css";
+import ToTop from "@/components/scrollToTop/ToTop";
 
 const poppins = Poppins({
   weight: ["100", "200", "300", "400", "500", "600", "700", "800", "900"],
@@ -28,6 +29,7 @@ export default function RootLayout({
           <Header />
           <main id="main">{children}</main>
           <Footer />
+          <ToTop />
         </div>
       </body>
     </html>
