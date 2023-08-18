@@ -1,0 +1,56 @@
+.featuredSectionWrapper {
+  padding: var(--padding-primary-800);
+}
+
+.sectionTitle {
+  margin-bottom: var(--margin-primary-400);
+}
+
+.cardSlider {
+  margin-top: 20px;
+  padding: 5px;
+}
+
+.card {
+  padding: var(--padding-primary-400);
+  background-color: rgba(255, 255, 255, 0.2);
+  border: 1px solid var(--color-neutral-300);
+  border-radius: 20px;
+  text-align: center;
+}
+
+.image {
+  width: 100%;
+  justify-content: center;
+  margin: 0 auto;
+  max-width: 250px;
+  height: 200px;
+  border-radius: 10px;
+  margin-bottom: 20px;
+}
+
+.countryTitle {
+  font-weight: var(--font-weight-500);
+  text-transform: uppercase;
+  margin-bottom: 10px;
+}
+
+.resultButton {
+  display: inline-block;
+  margin-top: 15px;
+  padding: var(--padding-secondary-200) var(--padding-secondary-500);
+  border-radius: 100px;
+  background-color: var(--color-danger-300);
+  color: var(--color-neutral-200);
+  font-size: var(--font-size-150);
+  font-weight: var(--font-weight-500);
+  border: 3px solid var(--color-neutral-hover-200);
+  transition: filter 0.2s ease-in-out, border 0.2s ease-in-out;
+}
+
+@media screen and (max-width: 600px) {
+  .sectionTitle {
+    font-size: var(--font-size-500);
+    margin-bottom: 1rem;
+  }
+}
