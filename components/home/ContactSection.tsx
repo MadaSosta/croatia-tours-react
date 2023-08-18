@@ -20,6 +20,7 @@ function ContactSection() {
                 className={styles.name}
                 name="name"
                 placeholder="Your Name"
+                required={true}
               />
             </label>
             <br />
@@ -30,6 +31,7 @@ function ContactSection() {
                 className={styles.phone}
                 name="phone"
                 placeholder="Your Phone"
+                required={true}
               />
             </label>
             <br />
@@ -40,6 +42,7 @@ function ContactSection() {
                 className={styles.email}
                 name="email"
                 placeholder="Your Email"
+                required={true}
               />
             </label>
             <br />
@@ -49,6 +52,7 @@ function ContactSection() {
                 id="date"
                 className={styles.date}
                 name="date"
+                required={true}
               />
             </label>
             <br />
@@ -83,7 +87,7 @@ function ContactSection() {
               <FaMobileAlt className={styles.mobileAlt} />
             </div>
             <h4 className={cinzelDecorative.className}>Call Us</h4>
-            <p>+385-925-5582-24</p>
+            <p>+385/91 512 6224</p>
           </div>
         </div>
       </section>
