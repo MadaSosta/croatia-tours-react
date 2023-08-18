@@ -33,17 +33,12 @@ input {
   font-family: inherit;
 }
 
-button:focus-visible,
-input:focus-visible {
-  outline: 1px solid var(--color-primary-500) !important;
-}
-
 img,
 picture,
 svg,
 video {
   max-width: 100%;
-  display: block;
+  display: flex;
 }
 
 ul,
@@ -80,11 +75,11 @@ h6 {
   margin: 0 auto;
 }
 
-@media only screen and (max-width: 768px) {
+/* @media only screen and (max-width: 768px) {
   #main {
     margin-bottom: calc(var(--padding-primary-600) * 2);
   }
-}
+} */
 
 @media (prefers-color-scheme: dark) {
   :root {
@@ -304,4 +299,29 @@ h6 {
     color: var(--color-neutral-100);
     background-color: var(--color-neutral-800);
   }
+}
+/* SLIDER  */
+
+/* Apply styles to each individual slide */
+.slick-slide {
+  padding: 0 10px; /* Adjust padding to control space between slides */
+  margin-bottom: 30px;
+}
+
+.slick-prev {
+  left: -55px !important; /* Adjust the left position as needed */
+}
+
+.slick-next:before {
+  font-size: 50px !important; /* Adjust the font size as needed */
+}
+
+.slick-prev:before {
+  font-size: 50px !important; /* Adjust the font size as needed */
+}
+
+.slick-dots li button:before {
+  color: white !important; /* Adjust the color as needed */
+
+  font-size: 15px !important; /* Adjust the font size as needed */
 }
