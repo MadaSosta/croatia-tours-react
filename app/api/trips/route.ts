@@ -2,6 +2,8 @@ import { BASE_API_URL_GEONAME, BASE_API_URL_RADIUS, LIMIT, RADIUS } from '@/cons
 import { type TGeoname, TRadiusApiResponse } from '@/types/typings'
 import { NextRequest, NextResponse } from 'next/server';
 
+export const dynamic= 'force-dynamic';
+
 export async function GET(req: NextRequest, res: NextResponse) {
   try {
 
