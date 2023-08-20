@@ -1,9 +1,8 @@
 import { BASE_API_URL_GEONAME, BASE_API_URL_RADIUS, LIMIT, RADIUS } from '@/constants/consts'
 import { type TGeoname, TRadiusApiResponse } from '@/types/typings'
-import { NextApiRequest, NextApiResponse } from 'next';
-import { NextResponse } from 'next/server';
+import { NextRequest, NextResponse } from 'next/server';
 
-export async function GET(req: NextApiRequest, res: NextApiResponse) {
+export async function GET(req: NextRequest, res: NextResponse) {
   try {
 
     const query = req?.url?.split('?')[1];
