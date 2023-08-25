@@ -5,7 +5,7 @@ import { db } from '../config/firebaseConfig'
 import { TReview, TTrip } from '@/types/typings';
 
 const featuredTripsFetcher = async () => {
-    const q = query(collection(db, "featuredTrips"), orderBy("viewCount", "desc"), limit(7));
+    const q = query(collection(db, "featuredTrips"), orderBy("viewCount", "desc"), limit(5));
     const latestTripsSnapshot = await getDocs(q)
 
     const data = latestTripsSnapshot.docs.map((doc) => doc.data().trip);
