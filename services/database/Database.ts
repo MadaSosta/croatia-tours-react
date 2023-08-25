@@ -16,6 +16,14 @@ class Database implements IDatabase {
     AddReview(review: TReview, tripID: string): void {
         this.reviewsDatabase.AddReview(review, tripID);
     }
+
+    GetReviewsForTrip(tripID: string): Promise<{
+        review: TReview;
+        tripID: string;
+    }[]> {
+        return this.reviewsDatabase.GetReviewsForTrip(tripID);
+    }
+
     AddFeaturedTrip(trip: TTrip): void {
         this.tripsDatabase.AddFeaturedTrip(trip);
     }
