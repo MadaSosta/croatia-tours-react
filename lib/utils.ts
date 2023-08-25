@@ -1,7 +1,7 @@
 import { Dispatch, SetStateAction, RefObject} from 'react';
 
 function formatDate(date: Date, options: Intl.DateTimeFormatOptions): string {
-    return date.toLocaleDateString('en-US', options);
+    return date.toLocaleDateString('en-GB', options);
   }
 
   function calculateAverage(array: number[] | undefined) {
