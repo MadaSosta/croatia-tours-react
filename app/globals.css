@@ -334,9 +334,9 @@ h6 {
   z-index: 2;
   cursor: pointer;
   border-radius: 100% !important;
-  padding: 5px;
+  padding: 5px !important;
   width: 40px;
   height: 40px;
-  box-shadow: 0 0 10px 0 rgba(132, 128, 177, 0.28);
+  box-shadow: 0 0 10px 0 rgba(132, 128, 177, 0.28) !important;
   border: none;
 }
