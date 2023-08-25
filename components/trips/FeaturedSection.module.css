@@ -54,3 +54,14 @@
     margin-bottom: 1rem;
   }
 }
+
+/* Responsivness */
+
+@media screen and (max-width: 500px) {
+  .featuredSectionWrapper {
+    margin-top: var(--margin-primary-400);
+  }
+  .sectionTitle {
+    font-size: var(--font-size-400);
+  }
+}
