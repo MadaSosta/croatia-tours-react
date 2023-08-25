@@ -17,9 +17,11 @@ import { dateTimeFormatOptions } from "@/constants/consts";
 function ReviewModal({
   tripID,
   setShowReviewModal,
+  setReviews,
 }: {
   tripID: string;
   setShowReviewModal: Dispatch<SetStateAction<boolean>>;
+  setReviews: Dispatch<SetStateAction<{ review: TReview; tripID: string }[]>>;
 }) {
   const [comment, setComment] = useState<TComment>({
     text: "",
@@ -37,7 +39,7 @@ function ReviewModal({
     user: user,
   });
 
-  const handleEvent = (e: React.FormEvent<HTMLFormElement>) => {
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
 
     if (!auth.currentUser) return;
@@ -48,7 +50,18 @@ function ReviewModal({
 
     try {
       database.AddReview(review, tripID);
-      setShowReviewModal(false);
+      const reviewQueryParams = new URLSearchParams({
+        tripID: tripID,
+      });
+      const response = await fetch("/api/reviews?" + reviewQueryParams);
+
+      if (response.ok) {
+        console.log("response", response);
+        const data = await response.json();
+        console.log("data", data);
+        setReviews(data);
+        setShowReviewModal(false);
+      }
     } catch (error) {
       console.log(error);
     }
@@ -78,7 +91,7 @@ function ReviewModal({
 
   return (
     <div className={styles.formWrapper}>
-      <form onSubmit={handleEvent} className={styles.formContainer}>
+      <form onSubmit={handleSubmit} className={styles.formContainer}>
         <div className={styles.formHeader}>
           <h3>Leave a review</h3>
           <AiFillCloseCircle
@@ -120,8 +133,14 @@ type TProps = {
 
 function Trip({ data }: TProps) {
   const { reviews, isError, isLoading } = useReviews(data.xid);
-  console.log(reviews);
   const [showReviewModal, setShowReviewModal] = useState(false);
+  const [reviewsToDisplay, setReviewsToDisplay] = useState<
+    {
+      review: TReview;
+      tripID: string;
+    }[]
+  >([]);
+
   const pretify = (str: string) => {
     const kinds = str.split(",");
     const words = kinds.map((kind) => kind.replace("_", " "));
@@ -130,6 +149,12 @@ function Trip({ data }: TProps) {
     );
     return capitalized;
   };
+
+  useEffect(() => {
+    if (reviews) {
+      setReviewsToDisplay(reviews);
+    }
+  }, [reviews, isLoading, isError]);
 
   return (
     <div className={styles.dashboardWrapper}>
@@ -153,11 +178,13 @@ function Trip({ data }: TProps) {
             <p className={styles.starRating}>
               Rating:{" "}
               {calculateAverage(
-                reviews?.map((review) => review.review.comment.rating || 0)
+                reviewsToDisplay?.map(
+                  (review) => review.review.comment.rating || 0
+                )
               )}
               <AiFillStar />
             </p>
-            <p>Reviews: {reviews?.length || "0"}</p>
+            <p>Reviews: {reviewsToDisplay?.length || "0"}</p>
             <Link href={`https://www.booking.com/${data.address?.city}`}>
               <button className={styles.hotelButton}>Show nearby hotels</button>
             </Link>
@@ -180,14 +207,15 @@ function Trip({ data }: TProps) {
               <ReviewModal
                 tripID={data.xid}
                 setShowReviewModal={setShowReviewModal}
+                setReviews={setReviewsToDisplay}
               />,
               document.body
             )}
         </div>
         {isError && <div>Something went wrong...</div>}
         {isLoading && <Loading />}
-        {reviews &&
-          reviews.map((review) => (
+        {reviewsToDisplay &&
+          reviewsToDisplay.map((review) => (
             <div
               key={review.review.comment.createdAt}
               className={styles.review}
