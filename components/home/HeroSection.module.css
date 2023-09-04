@@ -9,10 +9,9 @@
 .heroInner {
   display: flex;
   gap: 150px;
-  margin: 130px auto 0;
+  margin: 120px auto 0;
   width: 100%;
   max-width: 1200px;
-  padding: 0 var(--padding-primary-800);
 }
 
 .heroImageContainer {
