@@ -223,6 +223,7 @@
 
   .authorInfo {
     display: flex;
+    align-items: center;
   }
 
   .authorName {
