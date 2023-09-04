@@ -93,7 +93,7 @@ function ReviewModal({
     <div className={styles.formWrapper}>
       <form onSubmit={handleSubmit} className={styles.formContainer}>
         <div className={styles.formHeader}>
-          <h3>Leave a review</h3>
+          <h3 className={styles.formTitle}>Leave a review</h3>
           <AiFillCloseCircle
             className={styles.closeIcon}
             onClick={() => setShowReviewModal(false)}

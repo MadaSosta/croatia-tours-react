@@ -211,22 +211,68 @@
 }
 
 @media screen and (max-width: 500px) {
+  .rating {
+    flex-direction: column;
+    text-align: center;
+  }
+
   .ratingScore {
-    display: block;
+    flex-direction: column;
     margin-top: 10px;
   }
 
+  .authorInfo {
+    display: flex;
+  }
+
+  .authorName {
+    margin-left: 10px;
+  }
+
+  .authorDate {
+    margin-left: 10px;
+  }
+
   .avatar {
-    width: 50px;
-    height: 50px;
+    width: 40px;
+    height: 40px;
     background-color: rgba(255, 255, 255, 0.571);
     border-radius: 100%;
     padding: 5px;
     margin-bottom: 2px;
   }
 
+  .review {
+    flex-direction: column;
+    margin-bottom: 10px;
+    padding: 10px;
+  }
+
+  .reviewContent {
+    padding: 10px;
+  }
+
   .reviewButton {
-    padding: var(--padding-primary-100);
+    margin-top: 20px;
+    padding: var(--padding-primary-300);
     border-radius: var(--border-radius-300);
+  }
+
+  .formContainer {
+    gap: 20px;
+  }
+
+  .formTitle {
+    font-size: 1.5rem;
+  }
+
+  .awardRating {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .awardButton {
+    width: 100%;
+    margin-top: 10px;
   }
 }
